@@ -18,7 +18,7 @@ Program Status: SUCCESS
 using namespace std;
 
 // Processes are vertices and dependencies are edges
-// Topological sort algoritm is used to solve the problem
+// Topological sort algoritm is implemented to solve the problem
 
 struct Vertex{
     int id;                                 //ID of the vertex
