@@ -18,10 +18,13 @@ Program Status: SUCCESS
 
 using namespace std;
 
+// Kruskal's algorithm is implemented to solve the problem
+// Vertices are districts and edges are the connections between districts
+
 struct Edge;
 int N, M;
 vector<Edge> edges;
-vector<Edge> inMST;
+vector<Edge> inMST;             //in minimum spanning tree
 int* contains;
 int totalTime;
 
@@ -50,10 +53,10 @@ public:
         set1 = find(set1);
         set2 = find(set2);
         if(arr[set1] > arr[set2]){
-            // First one is less deep, so make its root second.
+            // First one is less deep, so make its root second one.
             arr[set1] = set2;
         }else if(arr[set1] < arr[set2]){
-            // Vice versa
+            // Second one is less deep, so make its root first one.
             arr[set2] = set1;
         }else{
             // They are equal in depth. Set first one as second one's root. (Arbitrarily chosen)
@@ -73,7 +76,7 @@ public:
 struct Edge {
     int n1;
     int n2;
-    double w;
+    double w;                           //weight of edges (or time required the cut the connection)
     Edge(int n1_, int n2_, double w_) {
         n1 = n1_;
         n2 = n2_;
@@ -106,7 +109,7 @@ ostream& operator<<(ostream& os, const Edge& e) {
 void read_input(char* argv[]) {
 
     fstream fin(argv[1]);
-    fin >> N >> M;
+    fin >> N >> M;              //number of districts and the number of the districts Rose will try to cut
     int n1, n2, w;
     contains = new int[N];
     for(int i=0; i<N-1; i++) {
