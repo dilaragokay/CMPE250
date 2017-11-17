@@ -1,6 +1,3 @@
-//
-// Created by cagatay on 27.07.2016.
-//
 #include "LinkedList.h"
 
 #ifndef BIGINTEGER_H
