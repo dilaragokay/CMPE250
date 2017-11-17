@@ -17,7 +17,6 @@ Program Status: SUCCESS
 
 using namespace std;
 
-//completed
 struct Event{
     int index;
     double arrTime;         //arrival time of event
