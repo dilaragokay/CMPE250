@@ -142,17 +142,17 @@
 
 (run)
 
-(open "OUTPUTS.txt" myOutput "w")
+(open "OUTPUTS.txt" outputFile "w")
 
 (defrule find-max-value
    (final-illness (illness-name ?illness-name) (prob ?prob1) (input-no ?input-no))
    (not (final-illness (prob ?prob2&:(> ?prob2 ?prob1)) (input-no ?input-no)))
    =>
-   (printout myOutput ?input-no "," ?illness-name crlf))
+   (printout outputFile ?input-no "," ?illness-name crlf))
 
 (run)
 
-(close myOutput)
+(close outputFile)
 
 
 
